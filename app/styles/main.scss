@@ -1,0 +1,381 @@
+$icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
+// bower:scss
+@import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
+// endbower
+
+.browsehappy {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+body {
+  padding: 0;
+}
+.blue-gradient{
+  background: -webkit-linear-gradient(left, #E8EEF6 , #fff); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(right, #E8EEF6 , #fff); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(right, #E8EEF6 , #fff); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to right, #E8EEF6 , #fff); /* Standard syntax */
+}
+.red-gradient{
+  background: -webkit-linear-gradient(left, #FAE4E4 , #fff); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(right, #FAE4E4 , #fff); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(right, #FAE4E4 , #fff); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to right, #FAE4E4 , #fff); /* Standard syntax */
+}
+
+.container{
+  margin: 30px;
+  width: 98%;
+  height: 100%;
+  #background-color: #F9FBFD;
+
+  @extend .blue-gradient;
+  font-size: 14px;
+  .title-head{
+    color: #665F5B;
+    font-size: 18px;
+  }
+  .col-height{
+    min-height: 30px;
+    padding: 5px 10px;
+  }
+  .mouse-pointer{
+    cursor: pointer;
+  }
+  .second-div{
+    display: none;
+  }
+  .row-margin{
+    @extend .blue-gradient;
+    margin: 8px;
+    padding: 5px;
+    .column{
+      text-align: center;
+    }
+    .first-col{
+      margin-left: 10px;
+    }
+    .box{
+      width:50px;
+      height:30px;
+      text-align:center;
+      margin: 0 auto;
+    }
+    .grey-box{
+      background-color: #D8D8D8;
+      border: 2px solid #C5C5C6;
+      .blue-box{
+        background-color: #5E9CD3;
+      width: 60%;
+        height: 100%;
+      }
+     }
+    .red-box{
+      background-color: #BD060F;
+      border: 2px solid #C5C5C6;
+    }
+    .green-box{
+      background-color: #548039;
+      border: 2px solid #C5C5C6;
+    }
+    .arrow{
+      color: #548039;
+      font-size: 40px;
+    }
+
+    .big-box{
+      border: 3px solid #548039;
+      min-height: 201px;
+      padding: 7px;
+      margin: 15px;
+      background-color: #fff;
+      background: linear-gradient(to bottom right, #EAF0E7, white);
+      box-shadow: 3px 3px 7px #888888    ;
+      .overflow-hidden{
+
+      }
+      .maintain-text{
+        margin-left:-25px;
+        font-size: 16px;
+      }
+      .relative-text{
+        position: relative;
+      }
+      .absolute-text{
+        position: absolute;
+        margin-top: 0px;
+      }
+      .test-text{
+        margin-left: 32px;
+        font-size: 16px;
+        display: block;
+      }
+      .margin-main{
+        margin-left: 20px;
+      }
+      .second-width-text{
+        color: #fff;
+        top: 31%;
+        left: 27%;
+        font-size: 18px;
+      }
+      .second-width-text-red{
+        color: #fff;
+        top: 28%;
+        left: 26%;
+        font-size: 18px;
+      }
+      .width-text{
+        color: #fff;
+        margin-left: 36%;
+        margin-top: 25%;
+        font-size: 18px;
+      }
+      .second-width-text-yellow{
+        color: #000;
+        top: 20%;
+        left: 30%;
+        font-size: 18px;
+      }
+      .width-text-yellow{
+        color: #000;
+        margin-left: 40%;
+        margin-top: 15%;
+        font-size: 18px;
+      }
+      .second-box-comp{
+        padding-left: 11%;
+      }
+      .second-comp-row{
+        margin-top: 9%;
+      }
+      .state-text{
+        color: #576A8A;
+        font-size: 16px;
+      }
+      .build-text{
+        padding-left: 10%;
+      }
+      .bottom-css{
+        bottom: 3%;
+        left: 0px;
+      }
+      .percent-green{
+        color: #A7C851;
+        padding-top: 18%;
+        font-size: 38px;
+        padding-left: 8%;
+      }
+      .percent-red{
+        color: #BD9330;
+        padding-top: 18%;
+        font-size: 38px;
+        padding-left: 8%;
+      }
+      .third-box-row{
+        margin-top: -29px;
+      }
+      .test-passed{
+        margin-top: -8px;
+        padding-left: 11%;
+        font-size: 12px;
+      }
+      .progress-bar-box{
+        background-color: #F6CBAE;
+        width: 85%;
+        height: 35px;
+        margin: 0 auto;
+      }
+      .green-progress-bar{
+        background-color: #C6DFB5;
+        width: 60%;
+        height: 35px;
+        margin: 0 auto;
+        top: 0px;
+        left: 12%;
+      }
+      .functional-progress-bar-box{
+        background-color: #F6CBAE;
+        width: 85%;
+        height: 35px;
+        margin: 0 auto;
+      }
+      .functional-green-progress-bar{
+        background-color: #C6DFB5;
+        width: 20%;
+        height: 35px;
+        margin: 0 auto;
+        top: 0px;
+        left: 12%;
+      }
+      .progress-text{
+        bottom: 0px;
+        margin-left: 10%;
+        height: 35px;
+      }
+      .progress-label{
+        color: #476E48;
+        margin-top: 1%;
+        font-size: 17px;
+        font-weight: bold;
+      }
+      .code-coverage{
+        color: #476E48;
+        margin-top: -4%;
+        font-size: 12px;
+      }
+      .red-progress-label{
+        color: #84380A;
+      }
+      .red-code-coverage{
+        color: #84380A;
+      }
+
+    }
+    .red-big-box-border{
+      border: 3px solid #BD1111;
+      background: linear-gradient(to bottom right, #FAE4E4, white);
+      .first-box-col{
+        color: #BD1111;
+      }
+    }
+
+    .float-left{
+      float: left ;
+    }
+    .box-heading{
+      font-size: 18px;
+      font-weight: bold;
+      color: #548039;
+    }
+    .first-box-col{
+      margin-left: 15px;
+    }
+    .box-heading-red{
+
+      color: #BD1111;
+    }
+  }
+
+  .grey-border{
+    border: 2px solid #C5C5C6;
+    .machine-name{
+      color: #A5A5A4;
+    }
+    .state-text{
+      color: #A5A5A4;
+      font-size: 18px;
+    }
+  }
+  .result-text{
+    margin-top: 12%;
+  }
+  .change-accepted{
+    color: #FCBF2F;
+    font-size: 16px;
+    margin-top: 6%;
+  }
+  .auto-merged{
+    font-size: 32px;
+    color: #FCBF2F;
+    margin-top: -8px;
+  }
+  .red{
+    color: #BD1111;
+  }
+  .black-color{
+    color: #000;
+  }
+  .merged-build{
+    border-radius: 0px;
+    background-color: #5E9CD3;
+    border: 2px solid #C5C5C6;
+    margin-top: 7%;
+    font-size: 16px;
+    padding: 5px 15px 5px 10px;
+  }
+  .find-issue{
+    padding: 5px 10px 5px 10px;
+  }
+  .margin-to{
+    margin-top: 5%;
+  }
+  .dropdown-branch{
+    width: 33%;
+    margin-top: 5%;
+  }
+  .blue-border{
+    border: 2px solid #3D7BB1;
+    .machine-name{
+      color: #576A8A;
+    }
+    .state-text{
+      color: #576A8A;
+      font-size: 18px;
+    }
+  }
+  .red-border{
+    border: 2px solid #BD060F;
+    background: -webkit-linear-gradient(left, #FAE4E4 , #fff); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(right, #FAE4E4 , #fff); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(right, #FAE4E4 , #fff); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to right, #FAE4E4 , #fff); /* Standard syntax */
+
+    .machine-name{
+      color: #BD060F;
+    }
+    .state-text{
+      color: #BD060F;
+      font-size: 18px;
+    }
+    .first-row{
+      color: #BD1111;
+      font-size: 16px;
+      margin-top: 6%;
+    }
+    .second-row{
+      font-size: 32px;
+      color: #BD1111;
+      margin-top: -8px;
+    }
+
+  }
+
+  .green-border{
+    border: 2px solid #548039;
+    background: -webkit-linear-gradient(left, #EAF0E7 , #fff); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(right, #EAF0E7 , #fff); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(right, #EAF0E7 , #fff); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to right, #EAF0E7 , #fff); /* Standard syntax */
+    .machine-name{
+      color: #637B55;
+    }
+    .state-text{
+      color: #637B55;
+      font-size: 18px;
+    }
+    .first-row{
+      color: #FCBF2F;
+      font-size: 16px;
+      margin-top: 6%;
+    }
+    .auto-merged{
+      font-size: 32px;
+      color: #FCBF2F;
+      margin-top: -8px;
+    }
+    .black-color{
+      color: #000;
+    }
+    .second-row{
+      font-size: 32px;
+      color: #FCBF2F;
+      margin-top: -8px;
+    }
+  }
+
+
+}

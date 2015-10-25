@@ -1,0 +1,292 @@
+  <div class="row col-heigh row-margin title-head">
+    <div class="col-md-2 column">
+      Changelist / Build
+    </div>
+    <div class="col-md-2 column">
+      Owner
+    </div>
+    <div class="col-md-2 column">
+      Time Started
+    </div>
+    <div class="col-md-1 column">
+      State
+    </div>
+    <div class="col-md-1 column">
+      Metrics
+    </div>
+    <div class="col-md-1 column">
+      Build
+    </div>
+    <div class="col-md-1 column">
+      Unit Test
+    </div>
+    <div class="col-md-2 text-left">
+      Functional Test
+    </div>
+    <div class="col-md-1 column">
+
+    </div>
+  </div>
+  <div ng-repeat="obj in dataList" >
+    <div class="row col-heigh row-margin {{ getConfig(obj).boxBorder}}">
+      <div class="row mouse-pointer">
+        <div class="col-md-2">
+          <img src="{{ getConfig(obj).icon}}">
+          <span class="machine-name first-col">{{obj.buildName}}</span>
+        </div>
+        <div class="col-md-2 machine-name column">
+          {{obj.ownerName}}
+        </div>
+        <div class="col-md-2 state-text column">
+          {{obj.startTime}}
+        </div>
+        <div class="col-md-1 state-text column">
+          {{obj.status}}
+        </div>
+        <div class="col-md-1 ">
+          <div class="box grey-box {{ getConfig(obj).metrics}} status-box">
+            <div class="blue-box" ng-if="getConfig(obj).metrics == 'blue-box'">
+
+            </div>
+
+          </div>
+
+        </div>
+        <div class="col-md-1">
+          <div class="box {{ getConfig(obj).build}} status-box">
+            <div class="blue-box" ng-if="getConfig(obj).build == 'blue-box'">
+
+            </div>
+
+          </div>
+        </div>
+        <div class="col-md-1">
+          <div class="box {{ getConfig(obj).unitTest}} status-box">
+            <div class="blue-box" ng-if="getConfig(obj).unitTest == 'blue-box'">
+
+            </div>
+
+          </div>
+        </div>
+        <div class="col-md-1">
+          <div class="box {{ getConfig(obj).functionalTest}} status-box">
+            <div class="blue-box" ng-if="getConfig(obj).functionalTest == 'blue-box'">
+
+            </div>
+
+          </div>
+        </div>
+        <div class="col-md-1">
+
+        </div>
+      </div>
+      <div class="row second-div check-div">
+        <div class="col-md-9">
+          <div class="col-md-3">
+            <div class="col-md-12 big-box {{getConfig(obj).metricsBox}}">
+              <div class="row ">
+                <div class="box-heading first-box-col ">
+                  Metrics
+                </div>
+                <div class="row">
+                  <div class="col-md-6 relative-text">
+                    <div class="relative-text">
+                      <div class="absolute-text">
+                        <img src="{{getConfig(obj).testTypeIcon || '/images/green-arrow.png'}}" class="first-box-col"/>
+                        <div class="test-text">Test</div>
+
+                      </div>
+                      <div class="absolute-text width-text {{getConfig(obj).testType}}">{{obj.Metrics.test}}</div>
+                    </div>
+
+
+                  </div>
+                  <div class="col-md-6 relative-text">
+
+                    <img src="{{getConfig(obj).maintainabilityTypeIcon || '/images/green-arrow.png'}}" />
+                    <div class="absolute-text second-width-text {{getConfig(obj).maintainabilityType}}">{{obj.Metrics.maintainability}}</div>
+                    <div class="maintain-text">Maintainability</div>
+
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6 relative-text">
+                    <div class="relative-text">
+                      <div class="absolute-text">
+                        <img src="./images/yellow-arrow.png" class="first-box-col"/>
+                        <div class="test-text margin-main">Security</div>
+
+                      </div>
+                      <div class="absolute-text width-text-yellow">{{obj.Metrics.security}}</div>
+                    </div>
+
+
+                  </div>
+                  <div class="col-md-6 relative-text">
+
+                    <img src="./images/yellow-arrow.png" />
+                    <div class="absolute-text second-width-text-yellow">{{obj.Metrics.workmanship}}</div>
+                    <div class="maintain-text">Workmanship</div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <div class="col-md-3">
+            <div class="col-md-12 big-box {{getConfig(obj).buildBox}}">
+              <div class="row ">
+                <div class="box-heading first-box-col">
+                  Build
+                </div>
+              </div>
+              <div class="row second-comp-row">
+                <div class="col-md-6 second-box-comp">
+                  <div>
+                    <img src="./images/blue-comp.png" />
+                  </div>
+                  <div class="state-text build-text">
+                    Debug
+                  </div>
+
+                </div>
+                <div class="col-md-6">
+                  <div>
+                    <img src="./images/blue-comp.png" />
+                  </div>
+                  <div class="state-text build-text">
+                    Release
+                  </div>
+                </div>
+              </div>
+              <div class=" row maintain-text">
+                <div class="col-md-12 text-center absolute-text bottom-css">
+                  {{obj.buildTime}}
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+          <div class="col-md-3">
+            <div class="col-md-12 big-box {{getConfig(obj).unitTestBox}}">
+              <div class="row ">
+                <div class="box-heading first-box-col">
+                  Unit Test
+                </div>
+                <div class="row third-box-row">
+                  <div class="col-md-6 relative-text">
+                    <div id="piechart_{{obj.uniqueId}}" style="width: 150px; height: 150px;"></div>
+                  </div>
+                  <div class="col-md-6 percent-green">
+
+                    {{obj.UnitTest.passed}}%
+
+                  </div>
+                  <div class="col-md-6 test-passed">
+                    tests passed
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="progress-bar-box">
+
+                    </div>
+                    <div class="green-progress-bar absolute-text">
+
+                    </div>
+                    <div class="row absolute-text progress-text">
+                      <div class="col-md-12 text-center progress-label">
+                        {{obj.UnitTest.codeCovered}}%
+                      </div>
+                      <div class="col-md-12 text-center code-coverage">
+                        code covered
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <div class="col-md-3">
+            <div class="col-md-12 big-box {{getConfig(obj).functionalTestBox}}">
+              <div class="row ">
+                <div class="box-heading first-box-col">
+                  Functional Test
+                </div>
+                <div class="row third-box-row">
+                  <div class="col-md-6 relative-text">
+                    <div id="piechart1_{{obj.uniqueId}}" style="width: 150px; height: 150px;"></div>
+                  </div>
+                  <div class="col-md-6 percent-red">
+
+                    {{obj.FunctionalTest.passed}}%
+
+                  </div>
+                  <div class="col-md-6 test-passed">
+                    tests passed
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="functional-progress-bar-box">
+
+                    </div>
+                    <div class="functional-green-progress-bar absolute-text">
+
+                    </div>
+                    <div class="row absolute-text progress-text">
+                      <div class="col-md-12 text-center progress-label red-progress-label">
+                        {{obj.FunctionalTest.codeCovered}}%
+                      </div>
+                      <div class="col-md-12 text-center code-coverage red-code-coverage">
+                        code covered
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="row">
+            <div class="col-md-12 text-center result-text">
+              Result:
+            </div>
+            <div class="col-md-12 text-center first-row {{(obj.status === 'Completed')?' auto-merged black-color':''}}" >
+             {{obj.result.firstLine}}
+            </div>
+            <div class="col-md-12 text-center second-row" ng-if="obj.status !== 'Completed'">
+              {{obj.result.secondLine}}
+            </div>
+            <div class="col-md-12 text-center" ng-if="obj.status !== 'Completed'">
+              <a class="btn btn-success merged-build">{{obj.result.buttonText}}</a>
+            </div>
+            <div class="col-md-12 text-center" ng-if="obj.status === 'Completed'">
+              <div class="row">
+                <div class="col-md-7 text-right">
+                  <a class="btn btn-success merged-build find-issue">Deploy</a>
+                </div>
+                <div class="col-md-5 text-left margin-to">
+                  to:
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12 text-center" ng-if="obj.status === 'Completed'">
+              <select class="dropdown-branch">
+                <option value="production">Production</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+
+
